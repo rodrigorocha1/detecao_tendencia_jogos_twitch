@@ -17,15 +17,11 @@ CLIENTE_ID = os.getenv("CLIENTE_ID")
 async def main():
     twitch = Twitch(CLIENTE_ID, CLIENTE_SECRET)
 
-
-
     await twitch.authenticate_app([])
 
     assunto = Assunto[Stream]()
     duckdb_observador = DuckDBObservador()
     assunto.anexar_observador(duckdb_observador)
-
-
 
     # data atual em UTC
     today = datetime.now(timezone.utc).date()
@@ -33,17 +29,13 @@ async def main():
     async for stream in twitch.get_streams(language=['pt']):
         started_at = stream.started_at
 
-        # verificar se começou hoje
         if started_at.date() == today:
             print(
-               stream
+                stream
             )
             print(type(stream))
             assunto.notificar_observador(dados=stream)
             break
-
-
-
 
 
 asyncio.run(main())

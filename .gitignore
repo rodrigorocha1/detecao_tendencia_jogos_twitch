@@ -5,4 +5,4 @@
 minio-data/*
 *.duckdb
 *.csv
-*.env
+
