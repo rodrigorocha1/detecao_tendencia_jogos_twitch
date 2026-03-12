@@ -1,6 +1,7 @@
 aiohappyeyeballs==2.6.1
 aiohttp==3.13.3
 aiosignal==1.4.0
+APScheduler==3.11.2
 async-timeout==5.0.1
 attrs==25.4.0
 duckdb==1.5.0
@@ -26,4 +27,5 @@ twitchAPI==4.5.0
 types-pytz==2026.1.1.20260304
 typing_extensions==4.15.0
 tzdata==2025.3
+tzlocal==5.3.1
 yarl==1.23.0
