@@ -60,7 +60,10 @@ async def main():
 
     # mantém o loop vivo
     while True:
-        await asyncio.sleep(1)
+        logger.info("Dentro do While True iniciado...")
+        await asyncio.Event().wait()
+        logger.info("FIM do While True iniciado...")
+
 
 
 if __name__ == "__main__":
